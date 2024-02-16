@@ -45,4 +45,5 @@ int main() {
     cout << "==== Printing the standard variance =====" << endl;
 
     return 0;
+    
 }
