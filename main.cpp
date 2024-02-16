@@ -2,7 +2,7 @@
 CSE 310 Hash Function DIY Contest
 Instructor: Yiran "Lawrence" Luo
 Your name(s):
-Your team alias: 
+Your team alias:
 */
 
 #include <iostream>
@@ -11,7 +11,8 @@ Your team alias:
 #include "hash.h"
 using namespace std;
 
-int main() {
+int main()
+{
 
     int k = 0;
     int n = 0;
@@ -22,7 +23,8 @@ int main() {
     string line;
     getline(cin, line);
 
-    while (getline(cin, line)) {
+    while (getline(cin, line))
+    {
         texts[n] = line;
         n++;
     }
@@ -31,19 +33,20 @@ int main() {
     // By this point, k is the # of slots, and n is the # of tokens to fit in
     // texts[] stores the input sequence of tokens/keys to be inserted into your hash table
 
-    // The template is able to be compiled by running 
+    // The template is able to be compiled by running
     //   make
     //   ./encoder < inputs/sample_input.txt
     // which puts out the placeholders only.
 
     // Your time to shine starts now
 
-    cout << "==== Printing the contents of the first 5 slots ====" << endl;
+    cout << "==== Printing the contents of the first 4 slots ====" << endl;
 
     cout << "==== Printing the slot lengths ====" << endl;
 
     cout << "==== Printing the standard variance =====" << endl;
 
+    cout << "==== Printing the standard variance =====" << endl;
+
     return 0;
-    
 }
