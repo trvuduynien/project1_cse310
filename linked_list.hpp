@@ -79,16 +79,13 @@ public:
   // Destructor
   ~LinkedList();
 
-  // Add methods
+  // Add and remove methods
   void AddNode(T data);
-
-  // Remove methods
   T RemoveNode();
 
   // Other methods
-  bool ElementExists(T data);
-  T RemoveAtIndex(int index);
   Node<T> *Find(T data);
+  T Retrieve(int index);
   int Length();
 };
 
@@ -179,6 +176,23 @@ template <typename T>
 int LinkedList<T>::Length()
 {
   return this->size;
+}
+
+template <typename T>
+T LinkedList<T>::Retrieve(int index)
+{
+  if ((index < 0) || (index >= this->size))
+  {
+    throw out_of_range("OUT OF RANGE");
+  }
+
+  Node<T> *temp = this->head;
+  for (int i = 0; i < index; i++)
+  {
+    temp = temp->getNext();
+  }
+
+  return temp->getData();
 }
 
 #endif
