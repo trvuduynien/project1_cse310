@@ -9,11 +9,11 @@ Your team alias:
 #include <iomanip>
 #include <string>
 #include "hash.h"
+#include "linked_list.hpp"
 using namespace std;
 
 int main()
 {
-
     int k = 0;
     int n = 0;
     string texts[500];
@@ -39,6 +39,13 @@ int main()
     // which puts out the placeholders only.
 
     // Your time to shine starts now
+
+    Hash_Table hash_table = Hash_Table(k);
+
+    for (string text : texts)
+    {
+        hash_table.Hash_insert(text);
+    }
 
     cout << "==== Printing the contents of the first 4 slots ====" << endl;
 
