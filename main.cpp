@@ -49,9 +49,9 @@ int main()
 
     cout << "==== Printing the contents of the first 4 slots ====" << endl;
 
-    cout << "==== Printing the slot lengths ====" << endl;
+    hash_table.Print_content(4);
 
-    cout << "==== Printing the standard variance =====" << endl;
+    cout << "==== Printing the slot lengths ====" << endl;
 
     cout << "==== Printing the standard variance =====" << endl;
 
