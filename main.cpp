@@ -53,7 +53,11 @@ int main()
 
     cout << "==== Printing the slot lengths ====" << endl;
 
+    hash_table.Print_slot_length(4);
+
     cout << "==== Printing the standard variance =====" << endl;
+
+    printf("Standard variance: %.2f", hash_table.Standard_deviation());
 
     return 0;
 }

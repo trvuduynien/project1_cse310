@@ -42,7 +42,7 @@ float Hash_Table::Standard_deviation()
 
     for (int i = 0; i < size; ++i)
     {
-        standardDeviation = sqrt(pow(linked_lists[i].Length() - mean, 2) / this->size)
+        standardDeviation = sqrt(pow(linked_lists[i].Length() - mean, 2) / this->size);
     }
     return standardDeviation;
 }
@@ -60,17 +60,11 @@ void Hash_Table::Print_content(int length)
         cout << endl;
     }
 }
-void Hash_Table::Print_slot_length(int index)
+void Hash_Table::Print_slot_length(int length)
 {
-    for (int index = 0; index < this->size; index++)
+    for (int index = 0; index < length; index++)
     {
         LinkedList<string> list_str = this->Get_slot(index);
-        printf("Slot %d:", index);
-        for (int node_index = 0; node_index < list_str.Length(); node_index++)
-        {
-            string temp = list_str.Retrieve(node_index);
-            printf("%s ", temp);
-        }
-        cout << endl;
+        printf("Slot %d: %d\n", index, list_str.Length());
     }
 }
