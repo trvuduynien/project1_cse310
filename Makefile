@@ -14,4 +14,4 @@ hash.o:	hash.h linked_list.hpp hash.cpp
 	$(CC) $(CFLAGS) hash.cpp
 
 clean:
-	\rm *.o *~ main
+	\rm *.o 

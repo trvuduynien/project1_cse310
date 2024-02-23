@@ -122,7 +122,6 @@ void LinkedList<T>::AddNode(T data)
     }
     Node<T> *node_to_add = new Node<T>(data);
     temp->setNext(node_to_add);
-    node_to_add->setPrevious(temp);
   }
   this->size++;
 }

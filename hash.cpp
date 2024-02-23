@@ -55,7 +55,7 @@ void Hash_Table::Print_content(int length)
         for (int node_index = 0; node_index < list_str.Length(); node_index++)
         {
             string temp = list_str.Retrieve(node_index);
-            printf("%s ", temp);
+            cout << temp << " ";
         }
         cout << endl;
     }
