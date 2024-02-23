@@ -12,8 +12,6 @@ private:
   T data;
   Node<T> *next;
 
-  Node() : next(nullptr) {} //Initialize next in constructor
-
 public:
   // Constructor
   Node();
