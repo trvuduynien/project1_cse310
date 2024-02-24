@@ -17,11 +17,10 @@ int Hash_Table::Hash_function(string text)
 
     // number of characters in the input string
     int num_chars = text.length();
-    return num_chars % size;
+    return num_chars % this->size;
 }
 void Hash_Table::Hash_insert(string text)
 {
-
     int index = this->Hash_function(text);
     this->linked_lists[index].AddNode(text);
     // increment num_elements when inserting
@@ -34,17 +33,13 @@ LinkedList<string> Hash_Table::Get_slot(int index)
 
 float Hash_Table::Standard_deviation()
 {
-    float sum, standardDeviation = 0, mean;
-
+    float standardDeviation = 0, mean;
     mean = this->num_elements / this->size;
-
-    // sqrt(1/n*(x_i-mean)^2)
-
     for (int i = 0; i < size; ++i)
     {
-        standardDeviation = sqrt(pow(linked_lists[i].Length() - mean, 2) / this->size);
+        standardDeviation = standardDeviation + pow(this->Get_slot(i).Length() - mean, 2) / this->size;
     }
-    return standardDeviation;
+    return sqrt(standardDeviation);
 }
 void Hash_Table::Print_content(int length)
 {
