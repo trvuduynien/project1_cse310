@@ -9,15 +9,14 @@ Hash_Table::Hash_Table(int size)
     this->linked_lists = new LinkedList<string>[size];
     this->num_elements = 0;
 }
-Hash_Table::~Hash_table()
+Hash_Table::~Hash_Table()
 {
-    for (int index = 0; index < length; index++)
+    for (int index = 0; index < this->size; index++)
     {
-        delete this->linked_lists[index];
+        this->linked_lists[index].~LinkedList();
     }
-    delete this->linked_lists;
+    delete[] this->linked_lists;
 }
-
 
 int Hash_Table::Hash_function(string text)
 {

@@ -19,7 +19,7 @@ public:
     float Standard_deviation();
     void Print_content(int length);
     void Print_slot_length(int length);
-    ~Hash_table();
+    ~Hash_Table();
 };
 
 
