@@ -1,8 +1,5 @@
 #include <iostream>
-#include <string>
 #include <cmath>
-#include <list>
-#include <algorithm>
 #include "hash.h"
 #include "linked_list.hpp"
 
@@ -10,11 +7,20 @@ Hash_Table::Hash_Table(int size)
 {
     this->size = size;
     this->linked_lists = new LinkedList<string>[size];
-    int num_elements = 0;
+    this->num_elements = 0;
 }
+Hash_Table::~Hash_table()
+{
+    for (int index = 0; index < length; index++)
+    {
+        delete this->linked_lists[index];
+    }
+    delete this->linked_lists;
+}
+
+
 int Hash_Table::Hash_function(string text)
 {
-
     // number of characters in the input string
     int num_chars = text.length();
     return num_chars % this->size;

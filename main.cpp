@@ -6,10 +6,7 @@ Your team alias:
 */
 
 #include <iostream>
-#include <iomanip>
-#include <string>
 #include "hash.h"
-#include "linked_list.hpp"
 using namespace std;
 
 int main()
@@ -44,20 +41,26 @@ int main()
 
     for (string text : texts)
     {
+        if (text.empty()) {
+            break;
+        }
         hash_table.Hash_insert(text);
     }
 
     cout << "==== Printing the contents of the first 4 slots ====" << endl;
 
-    hash_table.Print_content(4);
+    hash_table.Print_content(k);
 
     cout << "==== Printing the slot lengths ====" << endl;
 
-    hash_table.Print_slot_length(4);
+    hash_table.Print_slot_length(k);
 
     cout << "==== Printing the standard variance =====" << endl;
 
     printf("Standard variance: %.2f", hash_table.Standard_deviation());
+
+    delete hash_table;
+
 
     return 0;
 }
