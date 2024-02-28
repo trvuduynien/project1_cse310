@@ -39,21 +39,21 @@ int main()
 
     Hash_Table hash_table = Hash_Table(k);
 
-    for (string text : texts)
+    for (int index = 0; index < n; index++)
     {
-        if (text.empty()) {
-            break;
+        if (texts[index].empty()) {
+            continue;
         }
-        hash_table.Hash_insert(text);
+        hash_table.Hash_insert(texts[index]);
     }
 
     cout << "==== Printing the contents of the first 4 slots ====" << endl;
 
-    hash_table.Print_content(4);
+    hash_table.Print_content(k);
 
     cout << "==== Printing the slot lengths ====" << endl;
 
-    hash_table.Print_slot_length(4);
+    hash_table.Print_slot_length(k);
 
     cout << "==== Printing the standard variance =====" << endl;
 

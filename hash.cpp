@@ -9,6 +9,7 @@ Hash_Table::Hash_Table(int size)
     this->linked_lists = new LinkedList<string>[size];
     this->num_elements = 0;
 }
+
 Hash_Table::~Hash_Table()
 {
     for (int index = 0; index < this->size; index++)
@@ -20,51 +21,46 @@ Hash_Table::~Hash_Table()
 
 int Hash_Table::Hash_function(string text)
 {
-    // number of characters in the input string
     int num_chars = text.length();
     return num_chars % this->size;
 }
+
 void Hash_Table::Hash_insert(string text)
 {
     int index = this->Hash_function(text);
     this->linked_lists[index].AddNode(text);
-    // increment num_elements when inserting
     this->num_elements++;
-}
-LinkedList<string> Hash_Table::Get_slot(int index)
-{
-    return this->linked_lists[index];
 }
 
 float Hash_Table::Standard_deviation()
 {
     float standardDeviation = 0, mean;
-    mean = this->num_elements / this->size;
-    for (int i = 0; i < size; ++i)
+    mean = float(this->num_elements) / this->size;
+    for (int index = 0; index < this->size; ++index)
     {
-        standardDeviation = standardDeviation + pow(this->Get_slot(i).Length() - mean, 2) / this->size;
+        standardDeviation = standardDeviation + pow(this->linked_lists[index].Length() - mean, 2) / this->size;
     }
     return sqrt(standardDeviation);
 }
+
 void Hash_Table::Print_content(int length)
 {
     for (int index = 0; index < length; index++)
     {
-        LinkedList<string> list_str = this->Get_slot(index);
         printf("Slot %d:", index);
-        for (int node_index = 0; node_index < list_str.Length(); node_index++)
+        for (int node_index = 0; node_index < this->linked_lists[index].Length(); node_index++)
         {
-            string temp = list_str.Retrieve(node_index);
+            string temp = this->linked_lists[index].Retrieve(node_index);
             cout << temp << " ";
         }
         cout << endl;
     }
 }
+
 void Hash_Table::Print_slot_length(int length)
 {
     for (int index = 0; index < length; index++)
     {
-        LinkedList<string> list_str = this->Get_slot(index);
-        printf("Slot %d: %d\n", index, list_str.Length());
+        printf("Slot %d: %d\n", index, this->linked_lists[index].Length());
     }
 }
