@@ -5,3 +5,4 @@ main.o
 exe
 hash.o
 .vscode/tasks.json
+./.vscode

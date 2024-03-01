@@ -31,10 +31,6 @@ void Hash_Table::Hash_insert(string text)
     this->linked_lists[index].AddNode(text);
     this->num_elements++;
 }
-LinkedList<string> Hash_Table::Get_slot(int index)
-{
-    return this->linked_lists[index];
-}
 
 float Hash_Table::Standard_deviation()
 {
@@ -54,7 +50,6 @@ void Hash_Table::Print_content(int length)
 {
     for (int index = 0; index < length; index++)
     {
-        LinkedList<string> list_str = this->Get_slot(index);
         printf("Slot %d:", index);
         for (int node_index = 0; node_index < this->linked_lists[index].Length(); node_index++)
         {
