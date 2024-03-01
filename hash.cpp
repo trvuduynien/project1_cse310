@@ -21,8 +21,14 @@ Hash_Table::~Hash_Table()
 
 int Hash_Table::Hash_function(string text)
 {
-    int num_chars = text.length();
-    return num_chars % this->size;
+//    int num_chars = text.length();
+//    return num_chars % this->size;
+    unsigned long hash = 0;
+    for (char c : text)
+    {
+        hash = ((hash << 5) + hash) + c;
+    }
+    return hash % this->size;
 }
 
 void Hash_Table::Hash_insert(string text)
@@ -34,18 +40,15 @@ void Hash_Table::Hash_insert(string text)
 
 float Hash_Table::Standard_deviation()
 {
-    float sum, standardDeviation = 0, mean;
-
+    float sum = 0, mean;
     mean = this->num_elements / this->size;
-
-    // sqrt(1/n*(x_i-mean)^2)
-
-    for (int i = 0; i < size; ++i)
+    for (int i = 0; i < this->size; ++i)
     {
-        standardDeviation = sqrt(pow(linked_lists[i].Length() - mean, 2) / this->size);
+        sum = sum + pow(this->linked_lists[i].Length() - mean, 2) ;
     }
-    return standardDeviation;
+    return sqrt(sum / this->size);
 }
+
 void Hash_Table::Print_content(int length)
 {
     for (int index = 0; index < length; index++)

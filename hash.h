@@ -21,6 +21,4 @@ public:
     ~Hash_Table();
 };
 
-
-
 #endif
