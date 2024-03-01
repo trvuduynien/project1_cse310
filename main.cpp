@@ -47,13 +47,13 @@ int main()
         hash_table.Hash_insert(text);
     }
 
-    cout << "==== Printing the contents of the first 4 slots ====" << endl;
+    cout << "==== Printing the contents of the first 5 slots ====" << endl;
 
-    hash_table.Print_content(4);
+    hash_table.Print_content(5);
 
     cout << "==== Printing the slot lengths ====" << endl;
 
-    hash_table.Print_slot_length(4);
+    hash_table.Print_slot_length(k);
 
     cout << "==== Printing the standard variance =====" << endl;
 

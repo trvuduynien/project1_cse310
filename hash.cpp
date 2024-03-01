@@ -52,7 +52,7 @@ void Hash_Table::Print_content(int length)
 {
     for (int index = 0; index < length; index++)
     {
-        printf("Slot %d:", index);
+        printf("Slot %d: ", index);
         for (int node_index = 0; node_index < this->linked_lists[index].Length(); node_index++)
         {
             string temp = this->linked_lists[index].Retrieve(node_index);
