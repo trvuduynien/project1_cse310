@@ -1,8 +1,8 @@
 /*
 CSE 310 Hash Function DIY Contest
 Instructor: Yiran "Lawrence" Luo
-Your name(s): VU TRUONG
-Your team alias: NGOC BACH KHOA
+Your name(s): Albert Vo
+Your team alias: Team 12345
 */
 
 #include <iostream>
@@ -57,7 +57,7 @@ int main()
 
     cout << "==== Printing the standard variance =====" << endl;
 
-    printf("Standard variance: %.2f", hash_table.Standard_deviation());
+    printf("Standard variance: %.2lf \n", hash_table.Standard_deviation());
 
     return 0;
 }

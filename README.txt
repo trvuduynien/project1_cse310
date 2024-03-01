@@ -1,20 +1,14 @@
-This demo is a binary compiled on general.asu and can only be executed there
+CSE 310 Hash Function DIY Contest
+Instructor: Yiran "Lawrence" Luo
+Your name(s): Albert Vo
+Your team alias: Team 12345
 
-Run the demo with the given txt files in inputs/ from hw02_starter.zip
+My team has 2 people: Albert Vo and Vu Truong
 
-If you run into errors like 'Permission Denied', run
-	
-	chmod 777 encoder
+My hash function is inspired from dib2. Path: http://www.cse.yorku.ca/~oz/hash.html
 
-to allow your own user to execute the encoder.
+We construct the hash table with every slot is a linked list.
 
+Example code to run:
 
-== How to run the demo
-
-e.g. (BEWARE of the '<', miss it and you will run into errors)
-
-
-	./encoder < common500.txt
-
-
-^ assuming encoder and common500.txt are in the same directory
+./exe < inputs/atoz.txt

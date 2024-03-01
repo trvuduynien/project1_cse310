@@ -21,8 +21,7 @@ Hash_Table::~Hash_Table()
 
 int Hash_Table::Hash_function(string text)
 {
-//    int num_chars = text.length();
-//    return num_chars % this->size;
+    // hash function is referred from dib2. Path: http://www.cse.yorku.ca/~oz/hash.html
     unsigned long hash = 0;
     for (char c : text)
     {
